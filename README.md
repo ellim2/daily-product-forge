@@ -1,2 +1,9 @@
-# daily-product-forge
-Private incubator for small, verified product experiments
+# Daily Product Forge
+
+작고 검증 가능한 제품 실험을 보관하는 비공개 인큐베이터입니다. 외부 공개·배포는 소유자의 별도 승인이 필요합니다.
+
+## 제품 목록
+
+| 날짜 | 제품 | 한 줄 가치 | 상태 |
+|---|---|---|---|
+| 2026-09-13 | [AgendaFit](products/2026-09-13-agendafit/) | 회의 아젠다가 시간 예산을 넘기기 전에 조정한다 | 검증 완료 |

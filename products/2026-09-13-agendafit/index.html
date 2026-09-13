@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgendaFit — 회의 시간 예산</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header><p class="eyebrow">LOCAL MEETING PLANNER</p><h1>AgendaFit</h1><p class="subtitle">회의 시간을 넘기기 전에 아젠다를 맞추세요.</p></header>
+    <section class="card settings" aria-labelledby="meeting-heading">
+      <h2 id="meeting-heading">회의 설정</h2>
+      <div class="grid">
+        <label>회의 제목<input id="meeting-title" maxlength="80" placeholder="예: 주간 제품 싱크"></label>
+        <label>총 회의 시간 (분)<input id="total-minutes" type="number" min="1" max="1440" value="30"></label>
+        <label>마무리·전환 버퍼 (분)<input id="buffer-minutes" type="number" min="0" max="1439" value="5"></label>
+      </div>
+    </section>
+    <section class="card" aria-labelledby="agenda-heading">
+      <div class="section-head"><div><h2 id="agenda-heading">아젠다</h2><p>각 항목에 현실적인 예상 시간을 넣으세요.</p></div><button id="add-item" class="secondary" type="button">+ 항목 추가</button></div>
+      <div id="items" aria-live="polite"></div>
+    </section>
+    <section class="summary" aria-live="polite">
+      <div><span>아젠다 가능 시간</span><strong id="available">25분</strong></div>
+      <div><span>아젠다 합계</span><strong id="used">0분</strong></div>
+      <div id="balance-card"><span id="balance-label">남은 시간</span><strong id="balance">25분</strong></div>
+    </section>
+    <section id="recommendation" class="card recommendation"><h2>진행 제안</h2><p>아젠다 항목을 추가하면 시간 예산을 확인할 수 있습니다.</p></section>
+    <footer><button id="load-example" class="secondary" type="button">예시 불러오기</button><button id="print" type="button">인쇄 / PDF 저장</button><span id="save-status" role="status"></span></footer>
+  </main>
+  <template id="item-template"><div class="agenda-row"><label class="topic-label">항목<input class="topic" maxlength="100" placeholder="예: 출시 결정"></label><label>분<input class="minutes" type="number" min="0" max="1440" value="5" aria-label="항목 시간 (분)"></label><button class="remove" type="button" aria-label="항목 삭제">×</button></div></template>
+  <script src="app.js"></script>
+</body>
+</html>
